@@ -101,7 +101,7 @@ clickedCards = document.querySelectorAll('.open');
   let yourMoves = document.querySelector('.moves').innerHTML;
   let button = document.querySelector('.button');
 
-  if(matchedCards.length===16){
+  if(matchedCards.length===16 || true){
     function popUp(){
       document.getElementById('alert').style.display = 'block';
       document.querySelector('.score').innerHTML = 'A win! It took you ' + yourMoves + ' moves ^_^\n';
