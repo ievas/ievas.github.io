@@ -70,7 +70,7 @@ clickedCards = document.querySelectorAll('.open');
 
       clickedCards[0].removeEventListener('click', clickCard);
       clickedCards[1].removeEventListener('click', clickCard);
-      let matchSound = new Audio('../fend-project-memory-game-master/assets/sounds/323436__yugi16dm__wow1.mp3')
+      let matchSound = new Audio('https://cdn.rawgit.com/ievas/udacity_project_memory_game/master/assets/sounds/323436__yugi16dm__wow1.mp3')
       matchSound.play();//sounds from: https://freesound.org/
     }
     else {
@@ -78,7 +78,7 @@ clickedCards = document.querySelectorAll('.open');
         clickedCards[0].classList.remove('open','show');
         clickedCards[1].classList.remove('open','show');
         lock = false;
-        let openSound = new Audio('../fend-project-memory-game-master/assets/sounds/johnnypanic.mp3')
+        let openSound = new Audio('https://cdn.rawgit.com/ievas/udacity_project_memory_game/master/assets/sounds/johnnypanic.mp3')
         openSound.play();//sounds from: https://freesound.org/
       }
       lock = true;
@@ -111,7 +111,7 @@ clickedCards = document.querySelectorAll('.open');
 
       setTimeout(function(){
       popUp();
-        let winSound = new Audio('../fend-project-memory-game-master/assets/sounds/188039_antumdeluge_bicycle-horn.mp3')
+        let winSound = new Audio('https://cdn.rawgit.com/ievas/udacity_project_memory_game/master/assets/sounds/188039_antumdeluge_bicycle-horn.mp3')
         winSound.play();//sounds from: https://freesound.org/
       },500);
 
