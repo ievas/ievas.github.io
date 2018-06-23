@@ -23,7 +23,7 @@ body {
 
 .container {
     display: flex;
-    /*justify-content: center;*/
+    justify-content: center;
     align-items: center;
     flex-direction: column;
 }
@@ -142,7 +142,7 @@ h1:hover {
 
 .score-panel {
     text-align: left;
-    width: 345px;
+    max-width: 345px;
     margin-bottom: 10px;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
     /*padding-right: 15px;*/
@@ -228,7 +228,7 @@ h1:hover {
 @media screen and (max-width: 400px){
   .deck{
   width: 95%;
-  min-width: 370px;
+  min-width: 380px;
   height: 95%;
   display: grid;
   grid-template-columns: 65px 65px 65px 65px;
