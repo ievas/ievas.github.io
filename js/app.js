@@ -16,17 +16,17 @@ function shuffle(){
   }
 }
 shuffle();
+//shuffles cards when the game is started and restarted
 // Shuffle function from https://stackoverflow.com/a/11972692
-//Shuffles cards when the game is started and restarted
-
 
 document.querySelectorAll('.card').forEach(function (card) {
   card.addEventListener('click', clickCard);
 });
+//selects all cards and adds event listener
 
 let resetChar = document.querySelector('.restart');
 resetChar.addEventListener('click', resetButton);
-
+//selects reset button and adds event listener to it
 function resetButton(){
   document.querySelectorAll('.card').forEach(function (card) {
     card.classList.remove('open', 'show', 'match')
@@ -42,25 +42,17 @@ function resetButton(){
     card.addEventListener('click', clickCard);
   });
 };
-
-// resets the game
-
+//resets the game
 
 function clickCard(event) {
 
   if (!lock) {
-
     ++countMoves;
     event.target.className += ' open show';
   }
-
-  // lock = true;
-
-
   if (countMoves === 1) {
     goTimer();
   }
-
   displayMoves ();
   starSystem();
 
@@ -90,59 +82,46 @@ clickedCards = document.querySelectorAll('.open');
         openSound.play();//sounds from: https://freesound.org/
       }
       lock = true;
-      setTimeout(flipBack, 400);
+      setTimeout(flipBack, 600);
     }
-
   }
+  //compares two clicked cards; if they match compares strings;
+  //removes class 'open', adds class 'matched';
+  //if two cards have the class 'open' and they do not match, removes class 'open' and 'show' after 0.6 seconds;
 
-  let matchedCards = document.querySelectorAll('.match');
-  let starRating = document.querySelector('.stars').innerHTML;
-  timeItTook = document.querySelector('#timer').innerHTML;
-  let yourMoves = document.querySelector('.moves').innerHTML;
-  let button = document.querySelector('.button');
+    let matchedCards = document.querySelectorAll('.match');
+    let starRating = document.querySelector('.stars').innerHTML;
+    timeItTook = document.querySelector('#timer').innerHTML;
+    let yourMoves = document.querySelector('.moves').innerHTML;
+    let button = document.querySelector('.button');
 
-  if(matchedCards.length===16 || true){
-    function popUp(){
-      document.getElementById('alert').style.display = 'block';
-      document.querySelector('.score').innerHTML = 'A win! It took you ' + yourMoves + ' moves ^_^\n';
-      document.querySelector('.rating').innerHTML = 'Star rating:' + starRating;
-      document.querySelector('.time').innerHTML = 'Time:'+ timeItTook;
+    if(matchedCards.length===16){
+      function popUp(){
+        document.getElementById('alert').style.display = 'block';
+        document.querySelector('.score').innerHTML = 'A win! It took you ' + yourMoves + ' moves ^_^\n';
+        document.querySelector('.rating').innerHTML = 'Star rating:' + starRating;
+        document.querySelector('.time').innerHTML = 'Time:'+ timeItTook;
 
-      button.innerHTML = 'Play again?';
-      button.addEventListener('click', function(){document.getElementById('alert').style.display = 'none';})
-      button.addEventListener('click', resetButton);
-    }
-
-    stopTimer();
-
-    setTimeout(function(){
-      popUp();
-      let winSound = new Audio('../fend-project-memory-game-master/assets/sounds/188039_antumdeluge_bicycle-horn.mp3')
-      winSound.play();//sounds from: https://freesound.org/
-    },500);
-
+        button.innerHTML = 'Play again?';
+        button.addEventListener('click', function(){document.getElementById('alert').style.display = 'none';})
+        button.addEventListener('click', resetButton);
       }
-    }
-//TODO IEVA if a card has class 'match'- removeEventListener('click'; clickCard)
 
+      stopTimer();
 
+      setTimeout(function(){
+      popUp();
+        let winSound = new Audio('../fend-project-memory-game-master/assets/sounds/188039_antumdeluge_bicycle-horn.mp3')
+        winSound.play();//sounds from: https://freesound.org/
+      },500);
 
-
-
-//counts moves and puts them in the html doc;
-//click counter help from: https://codepen.io/juliogcampos/pen/BzdjwY
+        }
+      }
 
 function displayMoves (){
   document.querySelector('.moves').innerHTML = countMoves;
 }
-
-
-//opens cards when clicked;
-
-//compares two clicked cards; if they match compares strings;
-//removes class 'open', adds class 'matched';
-//if two cards have the class 'open' and they do not match, removes class 'open' and 'show' after one second
-
+//puts countMoves in the html doc;
 
 let starNodeList = document.getElementsByClassName('fa-star');
 let stars = Array.from(starNodeList);
@@ -150,20 +129,21 @@ function starSystem(){
   if(countMoves >= 5){
   stars[4].classList.remove('fa-star');
   }
-  if(countMoves >=10){
+  if(countMoves >=15){
     stars[3].classList.remove('fa-star');
   }
-  if(countMoves >=15){
+  if(countMoves >=20){
     stars[2].classList.remove('fa-star');
   }
-  if (countMoves >=25) {
+  if (countMoves >=30) {
     stars[1].classList.remove('fa-star');
   }
-  if (countMoves >35) {
+  if (countMoves >40) {
     stars[0].classList.remove('fa-star');
     stars[0].classList.add('fa-star-half');
   }
 };
+//removes stars according to countMoves
 
 function resetStars(){
   stars.forEach(function(star){
@@ -171,10 +151,7 @@ function resetStars(){
     star.classList.remove('fa-star-half');
   });
 }
-///
-
-//removes stars according to countMoves
-
+//resets stars
 
 function goTimer() {
   timer = setInterval(function() {
@@ -185,14 +162,13 @@ function goTimer() {
     }
     displayTimer();
   }, 1000);
-}
-
+};
 
 function stopTimer(){
   clearInterval(timer);
   seconds = 0;
   minutes = 0;
-}
+};
 
 function displayTimer() {
   let pseudoSec = seconds;
@@ -205,6 +181,5 @@ function displayTimer() {
   }
   document.querySelector('#timer').innerHTML = pseudoMin + ":" + pseudoSec;
 }
-//
-
+//starts, stops and displays timer
 //timer help from: https://gwgnanodegrees.slack.com/files/UA8PXHUR3/FB0Q3CSMB/Getting_the_Memory_Game_timer_to_work

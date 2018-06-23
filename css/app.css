@@ -17,7 +17,7 @@ body {
 }
 
 body {
-    background: #ffffff url('../assets/img/subtle_dots.png'); /* Background pattern from Subtle Patterns */
+    background: #ffffff url('../assets/img/graphy.png'); /* Background pattern from Subtle Patterns */
     font-family: 'Roboto Mono', monospace;
 }
 
@@ -30,11 +30,18 @@ body {
 
 h1 {
     font-family: 'Roboto Mono', monospace;
-    font-size: 32px
-    font-weight: 300;
+    font-size: 32px;
     -webkit-text-stroke: 1px black;
+    text-stroke: 1px black;
+    text-shadow: 1.5px 1.5px 1.5px rgba(0, 0, 0, 0.5);
 }
-
+h1:hover {
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+.title {
+  color: #E74C3C;
+  font-size: 38px;
+}
 
 /*
  * Styles for the deck of cards
@@ -52,6 +59,7 @@ h1 {
     justify-content: space-between;
     align-items: center;
     margin: 0 0 3em;
+
 }
 
 .deck .card {
@@ -69,9 +77,30 @@ h1 {
 }
 
 .deck .card.open {
-    transform: rotateY(0);
+    backface-visibility: visible;
     background: #E74C3C;
     cursor: default;
+    animation-name: skewabit;
+    animation-duration: 0.25s;
+    animation-timing-function:ease-in;
+    animation-iteration-count: 1;
+}
+@keyframes skewabit{
+  0%{
+    transform: scale(1)
+  }
+  100%{
+    transform: scale(1.1)
+  }
+}
+@-webkit-keyframes skewabit{
+  0%{
+    -webkit-transform: scale(1)
+  }
+  100%{
+    -webkit-transform: scale(1.1)
+  }*/
+
 }
 
 .deck .card.show {
@@ -83,8 +112,32 @@ h1 {
     background: #FFC300;
     font-size: 52px;
     color: black;
+    animation-duration: 0.55s;
+    animation-name: pulse;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
 }
 
+@keyframes pulse {
+  0% { transform: scale(1); }
+    30% { transform: scale(1); }
+    40% { transform: scale(1.08); }
+    50% { transform: scale(1); }
+    60% { transform: scale(1); }
+    70% { transform: scale(1.05); }
+    80% { transform: scale(1); }
+    100% { transform: scale(1); }
+}
+@-webkit-keyframes pulse {
+  0% { transform: scale(1); }
+    30% { transform: scale(1); }
+    40% { transform: scale(1.08); }
+    50% { transform: scale(1); }
+    60% { transform: scale(1); }
+    70% { transform: scale(1.05); }
+    80% { transform: scale(1); }
+    100% { transform: scale(1); }
+}
 /*
  * Styles for the Score Panel
  */
@@ -93,6 +146,7 @@ h1 {
     text-align: left;
     width: 345px;
     margin-bottom: 10px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
     /*padding-right: 15px;*/
 }
 .score-panel #timer {
@@ -106,8 +160,11 @@ h1 {
     display: inline-block;
     margin: 0 5px 0 0;
 }
-.first-stars{
-    color: black;
+#fifth-star{
+    color: #E74C3C;
+}
+.moves{
+  color: #E74C3C;
 }
 
 .score-panel .stars li {
@@ -126,6 +183,18 @@ h1 {
     font-size: 26px;
     text-align: center;
 }
+.restart:hover {
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+.layer {
+  background-color: rgb(164,164,164, 0.3);
+  position: absolute;
+  top: 0;
+  left:0;
+  width: 100%;
+  width: 100%;
+}
 .popup {
   display: none;
   position:absolute;
@@ -136,7 +205,7 @@ h1 {
   width:100%;
   height:40%;
   max-width: 400px;
-  background-color: #F0E9E8;
+  background: #F0E9E8 url('../assets/img/graphy.png');
   text-align: center;
   list-style: none;
   font-weight: bold;

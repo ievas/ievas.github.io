@@ -3,7 +3,7 @@
 ## Table of Contents
 
 * [Instructions](#instructions)
-* [Contributing](#contributing)
+* [Acknowledgments](#acknowledgments)
 
 ## Instructions
 
@@ -13,8 +13,14 @@ To get started, open `js/app.js` and start building out the app's functionality
 
 For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
 
-## Contributing
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
 
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+## Acknowledgments
+
+Background pattern from Subtle Patterns;
+Sounds from: https://freesound.org/;
+Pulse animation help from: https://paulund.co.uk/create-pulse-effect-with-css3-animation;
+Click counter help from: https://codepen.io/juliogcampos/pen/BzdjwY;
+Timer help from: https://gwgnanodegrees.slack.com/files/UA8PXHUR3/FB0Q3CSMB/Getting_the_Memory_Game_timer_to_work;
+Inspiration and help when needed: http://jasonmwhite.com/memory-game/index.html;
+Thanks, Jason M White!
