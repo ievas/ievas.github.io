@@ -46,7 +46,7 @@ function resetButton(){
 
 function clickCard(event) {
 
-  if (!lock) {
+  if (!lock) {//if lock is false
     ++countMoves;
     event.target.className += ' open show';
   }
@@ -57,26 +57,29 @@ function clickCard(event) {
   starSystem();
 
 clickedCards = document.querySelectorAll('.open');
+clickedCards[0].classList.add('unabled');
+clickedCards[1].classList.add('unabled');
 
-  if(clickedCards.length === 2) {
+    if(clickedCards.length === 2) {
 
-    if(clickedCards[0].firstElementChild.getAttribute('id')===clickedCards[1].firstElementChild.getAttribute('id')) {
+      if(clickedCards[0].firstElementChild.getAttribute('id')===clickedCards[1].firstElementChild.getAttribute('id')) {
 
-      clickedCards[0].classList.remove('open');
-      clickedCards[1].classList.remove('open');
+        clickedCards[0].classList.remove('open');
+        clickedCards[1].classList.remove('open');
 
-      clickedCards[0].classList.add('match');
-      clickedCards[1].classList.add('match');
+        clickedCards[0].classList.add('match');
+        clickedCards[1].classList.add('match');
 
-      clickedCards[0].removeEventListener('click', clickCard);
-      clickedCards[1].removeEventListener('click', clickCard);
-      let matchSound = new Audio('https://cdn.rawgit.com/ievas/udacity_project_memory_game/master/assets/sounds/323436__yugi16dm__wow1.mp3')
-      matchSound.play();//sounds from: https://freesound.org/
+        clickedCards[0].removeEventListener('click', clickCard);
+        clickedCards[1].removeEventListener('click', clickCard);
+        let matchSound = new Audio('https://cdn.rawgit.com/ievas/udacity_project_memory_game/master/assets/sounds/323436__yugi16dm__wow1.mp3')
+        matchSound.play();//sounds from: https://freesound.org/
+
     }
     else {
       function flipBack(){
-        clickedCards[0].classList.remove('open','show');
-        clickedCards[1].classList.remove('open','show');
+        clickedCards[0].classList.remove('open','show','unabled');
+        clickedCards[1].classList.remove('open','show','unabled');
         lock = false;
         let openSound = new Audio('https://cdn.rawgit.com/ievas/udacity_project_memory_game/master/assets/sounds/johnnypanic.mp3')
         openSound.play();//sounds from: https://freesound.org/
@@ -135,12 +138,8 @@ function starSystem(){
   if(countMoves >=20){
     stars[2].classList.remove('fa-star');
   }
-  if (countMoves >=30) {
+  if (countMoves >=35) {
     stars[1].classList.remove('fa-star');
-  }
-  if (countMoves >40) {
-    stars[0].classList.remove('fa-star');
-    stars[0].classList.add('fa-star-half');
   }
 };
 //removes stars according to countMoves

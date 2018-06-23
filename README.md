@@ -14,7 +14,7 @@ This is a simple Memory game made for Udacity Front-End Web Developer Nanodegree
 
 ## How To Play
 
-Well
+
 
 ## Acknowledgments
 

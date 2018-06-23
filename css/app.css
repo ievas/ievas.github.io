@@ -158,9 +158,7 @@ h1:hover {
     display: inline-block;
     margin: 0 5px 0 0;
 }
-#fifth-star{
-    color: #E74C3C;
-}
+
 .moves{
   color: #E74C3C;
 }
@@ -180,18 +178,11 @@ h1:hover {
     cursor: pointer;
     font-size: 26px;
     text-align: center;
+    color: #E74C3C;
 }
 
 .restart:hover {
   text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
-}
-
-.layer {
-  background-color: rgba(164, 164, 164, 0.3);
-  position: absolute;
-  top: 0;
-  left:0;
-  width: 100%;
 }
 
 .popup {
@@ -230,6 +221,9 @@ h1:hover {
 .rating {
   list-style: none;
   display:inline-flex;
+}
+.deck .card.unabled {
+  pointer-events: none;
 }
 @media screen and (max-width: 400px){
   .deck{
@@ -270,5 +264,3 @@ h1:hover {
     width: 80px;
     height: 80px;
   }
-
-}
