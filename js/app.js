@@ -29,7 +29,7 @@ resetChar.addEventListener('click', resetButton);
 //selects reset button and adds event listener to it
 function resetButton(){
   document.querySelectorAll('.card').forEach(function (card) {
-    card.classList.remove('open', 'show', 'match')
+    card.classList.remove('open', 'show', 'match', 'unabled')
   });
   shuffle();
   countMoves = 0;
