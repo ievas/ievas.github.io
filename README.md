@@ -2,19 +2,28 @@
 
 ## Table of Contents
 
-* [A Short Description](#instructions)
-* [Acknowledgments](#acknowledgments)
+* [About the game and author](#about)
+* [How to install the game locally and how to clone the repository](#installation)
 * [How to Play](#how_to_play)
+* [Required dependencies](#dependencies)
+* [Contributions](#dependencies)
+* [License Information](#dependencies)
+* [Acknowledgments](#acknowledgments)
 
 
-
-## A Short Description
+## About the game and author
 
 This is a simple Memory game made for Udacity Front-End Web Developer Nanodegree program.
 
+## How to install
+
 ## How To Play
 
+## Required dependencies
 
+## Contributions
+
+## License Information
 
 ## Acknowledgments
 
