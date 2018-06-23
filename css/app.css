@@ -30,7 +30,7 @@ body {
 
 h1 {
     font-family: 'Roboto Mono', monospace;
-    font-size: 32px;
+    font-size: 36px;
     -webkit-text-stroke: 1px black;
     text-shadow: 1.5px 1.5px 1.5px rgba(0, 0, 0, 0.5);
 }
@@ -65,7 +65,7 @@ h1:hover {
     height: 125px;
     width: 125px;
     background: #2e3d49;
-    font-size: 0;
+    font-size: 0px;
     color: #34495E;
     border-radius: 5px;
     cursor: pointer;
@@ -103,13 +103,13 @@ h1:hover {
 }
 
 .deck .card.show {
-    font-size: 48px;
+    font-size: 54px;
 }
 
 .deck .card.match {
     cursor: default;
     background: #FFC300;
-    font-size: 52px;
+    font-size: 58px;
     color: black;
     animation-duration: 0.55s;
     animation-name: pulse;
@@ -233,8 +233,8 @@ h1:hover {
 }
 @media screen and (max-width: 400px){
   .deck{
-  width: 95%;
-  height: 95%;
+  width: 85%;
+  height: 85%;
   display: grid;
   grid-template-columns: 65px 65px 65px 65px;
   grid-template-rows: 65px 65px 65px 65px;
@@ -244,14 +244,19 @@ h1:hover {
     width: 60px;
     height: 60px;
   }
+  .deck .card.open{
+    font-size: 50px;
+  }
   .popup{
     font-size: 14px;
   }
 }
 @media screen and (min-width: 401px) and (max-width:750px){
   .deck{
-    width: 95%;
-    height: 95%;
+    width: 92%;
+    height: 92%;
+    max-width: 450px;
+    max-height: 450px;
     display: grid;
     grid-template-columns: 75px 75px 75px 75px;
     grid-template-rows: 75px 75px 75px 75px;
